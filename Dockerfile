@@ -1,5 +1,5 @@
 FROM php:7.0-fpm
-MAINTAINER Sean Kang <es.guybrush@gmail.com>
+MAINTAINER  Operations <ops@actionstep.com>
 
 RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list
 RUN curl -sL https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -14,7 +14,7 @@ RUN docker-php-ext-install mcrypt pdo_pgsql intl gd zip bz2
 RUN docker-php-ext-enable imagick
 RUN curl -L http://static.phpmd.org/php/2.5.0/phpmd.phar > /usr/local/bin/phpmd
 RUN curl -L https://github.com/squizlabs/PHP_CodeSniffer/releases/download/2.6.2/phpcs.phar > /usr/local/bin/phpcs
-RUN curl -L https://phar.phpunit.de/phpcpd.phar > /usr/local/bin/phpcpd
+RUN curl -L https://phar.phpunit.de/phpcpd-3.0.1.phar > /usr/local/bin/phpcpd
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN curl -O https://chromedriver.storage.googleapis.com/2.32/chromedriver_linux64.zip
